@@ -1,0 +1,31 @@
+Cyber Security Blog:
+Introduction- Hi my name is Akruth studying MCA in BMSIT College. I have my own passion on cyber security so i pursued DLithe for the Internship for cyber security.
+Introduction to Cyber Security :
+What is Hacking ? :- A process of accessing a protected resources without authorization.
+Who is Hacker ? :- Is a person who analyses the target, to identify a loophole and steal the data from the target exploiting the loophole.
+What Data can Hackers hack:- there are three types of data namely,
+Data at Rest: Storage(Ex: Hard disk , Memory, etc).
+Data at Transit: Movement(Ex: Exchange of data from one computer to another computer).
+Data at Process: Some computers are process our data.
+The main aim of hackers is to Steal/Modify/Delete the data.
+The cyber security works on the concept of CIA( Confidentiality | Integrity | Availability ).
+Cyber Security: Is a domain which studies about various protective mechanisms to secure our technological devices from Hackers.
+Needs of Cyber Security: Yahoo has hit with Data breach Thrice 3.3 billion Account comprised. Hacking Activity / Data breach can cause not only Financial losses, Data losses it can also cause Reputational loss.
+Required tools for Cyber Security:-
+Virtual Box — Software.
+Unpatched Windows 7 — OS.
+Metasploitable — OS.
+Parrot Sec OS(Less Weighted)/ Kali Linux(More Weighted) — OS 2GB ram.
+PHASES OF HACKING:
+1.Information Gathering- Collecting information about the target. Types of Information Gathering, Active — Collect info directly from the target — Accuracy of Info is high, Between risk of getting caught is also high.
+Example of Targets: LAN, Server.
+Passive — Collect info through third party — Accuracy if low, and risk of getting caught is also low.
+Example of Targets: Website, Device which is on Internet.
+2. Exploitation- Try to gain atleast a command line access on the victim machine.
+3. Privliege Escalation- Escalating user’s privlieage from lower level access to higher level access.
+4. Creating a Backdoor- creates a backdoor entry so that the Hacker can easily enter to the victim easily.
+5. Clearing the Tracks- wipe out all the logs captured by the system.
+What are Ports ?:- Are the doors of a computer through which the data enters and exit. each computer has 65535 ports per NIC. Ports are related to services are a network task that is running on a computer.
+Process / Protocol :- set of rules (Services)
+Actual medium where the content / data is passed is Ports: Service and ports are Communication from Server to client. Address for the packet to send / receive . Socket = IP : Port number, example: 192.168.1.10:8080.
+Port Scanning — Identifying the ports of the target computer to fetch information about the target computer. Information can be gained using Port scanning:-Ports Open, Services running, Target Operating system. Some information which is being leaked.
