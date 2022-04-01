@@ -1,31 +1,123 @@
-Cyber Security Blog:
-Introduction- Hi my name is Akruth studying MCA in BMSIT College. I have my own passion on cyber security so i pursued DLithe for the Internship for cyber security.
-Introduction to Cyber Security :
-What is Hacking ? :- A process of accessing a protected resources without authorization.
-Who is Hacker ? :- Is a person who analyses the target, to identify a loophole and steal the data from the target exploiting the loophole.
-What Data can Hackers hack:- there are three types of data namely,
-Data at Rest: Storage(Ex: Hard disk , Memory, etc).
-Data at Transit: Movement(Ex: Exchange of data from one computer to another computer).
-Data at Process: Some computers are process our data.
-The main aim of hackers is to Steal/Modify/Delete the data.
-The cyber security works on the concept of CIA( Confidentiality | Integrity | Availability ).
-Cyber Security: Is a domain which studies about various protective mechanisms to secure our technological devices from Hackers.
-Needs of Cyber Security: Yahoo has hit with Data breach Thrice 3.3 billion Account comprised. Hacking Activity / Data breach can cause not only Financial losses, Data losses it can also cause Reputational loss.
-Required tools for Cyber Security:-
-Virtual Box — Software.
-Unpatched Windows 7 — OS.
-Metasploitable — OS.
-Parrot Sec OS(Less Weighted)/ Kali Linux(More Weighted) — OS 2GB ram.
-PHASES OF HACKING:
-1.Information Gathering- Collecting information about the target. Types of Information Gathering, Active — Collect info directly from the target — Accuracy of Info is high, Between risk of getting caught is also high.
-Example of Targets: LAN, Server.
-Passive — Collect info through third party — Accuracy if low, and risk of getting caught is also low.
-Example of Targets: Website, Device which is on Internet.
-2. Exploitation- Try to gain atleast a command line access on the victim machine.
-3. Privliege Escalation- Escalating user’s privlieage from lower level access to higher level access.
-4. Creating a Backdoor- creates a backdoor entry so that the Hacker can easily enter to the victim easily.
-5. Clearing the Tracks- wipe out all the logs captured by the system.
-What are Ports ?:- Are the doors of a computer through which the data enters and exit. each computer has 65535 ports per NIC. Ports are related to services are a network task that is running on a computer.
-Process / Protocol :- set of rules (Services)
-Actual medium where the content / data is passed is Ports: Service and ports are Communication from Server to client. Address for the packet to send / receive . Socket = IP : Port number, example: 192.168.1.10:8080.
-Port Scanning — Identifying the ports of the target computer to fetch information about the target computer. Information can be gained using Port scanning:-Ports Open, Services running, Target Operating system. Some information which is being leaked.
+Port Scanning-
+nmap -sp ipaddress
+nmap -O ipaddress
+nmap -sV ipaddress
+----------------------------------------------------------------------------------
+Vulnerability scanning-
+nessus download link: https://www.tenable.com/downloads/nessus?loginattempted=true
+nessus access link: https://127.0.0.1:8834/
+select the type as-
+give username and password
+for activation- provide first name and last name
+email id-copy and paste the activation code to the browser and click on next
+my victim - 192.168.1.101
+personal computer - basic network scan
+website: basic network scan and web application tests
+after installation login with credentials:-
+on top left corner click on new scan
+select basic network scan
+give scan name and description
+under targets, give your victim ip address
+click on drop down near save -> launch
+wait until scan gets completed and then analyse the report.
+----------------------------------------------------------------------------------
+Exploitation of Windows7-
+msfdb init #initializing the Metasploit database.
+service postgresql start #start the postgres server in the background.
+msfconsole #the most popular interface to the Metasploit Framework (MSF). 
+search ms17_010 #search the vulnerability.
+info <paste the path obtained>
+use <paste the path obtained>
+show options #to show the options like host, port, etc.
+set RHOSTS <ipaddress of the victim >
+exploit #this is the final step, which will exploits the victim machine.
+----------------------------------------------------------------------------------
+Exploitation of Unix Machine-
+msfdb init #initializing the Metasploit database.
+service postgresql start #start the postgres server in the background.
+msfconsole #the most popular interface to the Metasploit Framework (MSF). It provides an “all-in-one” centralized console and allows you efficient access to virtually all of the options available in the MSF.
+search vsftpd #search the vulnerability.
+info <paste the path obtained>
+use <paste the path obtained>
+show options #to show the options like host, port, etc.
+set RHOSTS <ipaddress of the victim >
+exploit #this is the final step, which will exploits the victim machine.
+----------------------------------------------------------------------------------
+Sniffing and Spoofing-
+MAC address of the windows7 and Kali.
+Go to Kali and in sniffing and spoofing select Wireshark.
+Select eth0 or usb based on your requirements to perform further actions.
+Go to sniffing and spoofing and select ettercap graphical in that select host and scan for the hosts and view the host list.
+Select the target1 and target2 with their address.
+Open windows7 and go to Internet Explorer.
+In Internet Explorer search #testfire.net(online website) and signin with username and password as admin and login.
+Go to kali in Wireshark we find the many different protocols in that select the http request, ipaddress of the target machine and post method, where we can find the login details.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Professional Web Application Testing Mechanisms-
+Open the Webpage using the browser and check if any thing fishy
+Right click on the webpage -> View Page Source -> analyze the html code / comments to find anything fishy
+Open the each and every hyperlinks in the Webpage using the browser and check if any thing fishy also check the page source.
+Use Wappalyzer to find the web technologies used in the server.
+Look for hidden webpages in the website using dirb / Web spiders / Crawling
+Use any Vulnerability Scanner and look for known vulnerabilities in the application
+------------------------------------------------------------------------------------
+Open Burpsuite
+Make the proxy intercept off.
+Webgoat (To open a webgoat we need a owasp ipaddress and paste that link in browser)
+In webgoat login username and password as webgoat.
+Start Webgoat
+Access Control Flaws
+Bypass a Path Based Access Control Scheme
+Logged in a user
+View Profile.
+Open Burpsuite to the target details.
+Select the appropriate data(by filtering the data -go to filter and show only requested item and select hide css, jss.
+Go to content and select send to repeater
+Go to Repeater and in response select render and the send the request
+change the employee id to get the others data
+-----------------------------------------------------------------------------------
+ Local File Inclusion-
+/etc/passwd //
+------------------------------------------------------------------
+Privilege Escalation-
+Login as a user (Larry) in OWASP Webgoat.
+Perform a unique operation as Larry (Edit any information of Larry)
+Change of Phone number.
+Lets Change the phone number of Larry.
+Check the updated profile and logout.
+After Update Profile request, check the burp suite for the request and copy the edit request of Larry.
+Find a post method request with action as Update Profile
+Copy the body of the request.
+Login as another user with same level privilege, as we are performing the horizontal privilege escalation.
+Logging in as Eric Walker.
+View Profile of Eric Walker
+Look for Eric Walker's view profile request in burp suite.
+Move the request from target to Repeater
+Edit the request of Eric walker, change the body content.
+Change the phone number in the body to desired number.
+Send the request.
+Check the response, and verify the change is updated or not.
+Change the response to render to see the front end.
+Data is changed.
+To verify the actual change of Larry's profile from Eric's profile, we should login as Larry and check his profile.
+----------------------------------------------------------------------------------------------------------------------
+Password Cracking using the tool Burpsuite-
+Retrieving the password by preparing the wordlist: Wordlist contains set of passwords.
+Prepare wordlist contains some random passwords
+Open the Burpsuite to capture the login credentials of the website
+Open a website which is insecure
+Try to give the credentials and let burpsuite to capture the credentials.
+select the login.jsp of post method
+send the selected line to the intruder and clear the cookies that are captured.
+Clear the place holder for all the sections and add the placeholder only for the password section.
+Goto Payload tab to load the wordlist in the section of payload.
+After loading the wordlist click on the Stat Attack and remember the payload count and its request should be same.
+----------------------------------------------------------------------------------------------------------------------
+Retrieving the Username and password by preparing the two different wordlist of username and password.
+Prepare wordlist contains some random username and passwords
+Open the Burpsuite to capture the login credentials of the website
+Open a website which is insecure
+Try to give the credentials and let burpsuite to capture the credentials.
+select the login.jsp of post method
+Send the credentials to the intruder to perform the attack by selecting the attack type as Cluster bomb loading the wordlist of username and password.
+Load the password wordlist. After loadinig the word list in the payload keep eye on the payload count and requests and click the start attack to perform the attack.
